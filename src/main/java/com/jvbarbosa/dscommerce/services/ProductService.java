@@ -17,14 +17,14 @@ public class ProductService {
 
     @Transactional(readOnly = true)
     public ProductDTO findById(Long id) {
-        Product product = repository.findById(id).get();
-        return new ProductDTO(product);
+        Product result = repository.findById(id).get();
+        return new ProductDTO(result);
     }
 
     @Transactional(readOnly = true)
     public Page<ProductDTO> findAll(Pageable pageable) {
-        Page<Product> products = repository.findAll(pageable);
-        return products.map(x -> new ProductDTO(x));
+        Page<Product> result = repository.findAll(pageable);
+        return result.map(x -> new ProductDTO(x));
     }
 
     @Transactional
