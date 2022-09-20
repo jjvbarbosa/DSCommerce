@@ -1,7 +1,7 @@
 package com.jvbarbosa.dscommerce.entities;
 
 import com.jvbarbosa.dscommerce.entities.enums.OrderStatus;
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.time.Instant;
 import java.util.HashSet;

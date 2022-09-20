@@ -1,6 +1,6 @@
 package com.jvbarbosa.dscommerce.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.time.Instant;
 
