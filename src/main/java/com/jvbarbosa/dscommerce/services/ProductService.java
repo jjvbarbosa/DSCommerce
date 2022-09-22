@@ -1,7 +1,9 @@
 package com.jvbarbosa.dscommerce.services;
 
+import com.jvbarbosa.dscommerce.dto.CategoryDTO;
 import com.jvbarbosa.dscommerce.dto.ProductDTO;
 import com.jvbarbosa.dscommerce.dto.ProductMinDTO;
+import com.jvbarbosa.dscommerce.entities.Category;
 import com.jvbarbosa.dscommerce.entities.Product;
 import com.jvbarbosa.dscommerce.repositories.ProductRepository;
 import com.jvbarbosa.dscommerce.services.exceptions.DatabaseException;
@@ -78,5 +80,12 @@ public class ProductService {
         entity.setDescription(dto.getDescription());
         entity.setPrice(dto.getPrice());
         entity.setImgUrl(dto.getImgUrl());
+
+        entity.getCategories().clear();
+        for (CategoryDTO catDto : dto.getCategories()) {
+            Category cat = new Category();
+            cat.setId(catDto.getId());
+            entity.getCategories().add(cat);
+        }
     }
 }
