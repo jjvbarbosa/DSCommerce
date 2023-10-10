@@ -19,7 +19,7 @@ public class CategoryController {
 
     @GetMapping
     public ResponseEntity<List<CategoryDTO>> findAll() {
-        List<CategoryDTO> dto = service.findAll();
-        return ResponseEntity.ok(dto);
+        List<CategoryDTO> list = service.findAll();
+        return ResponseEntity.ok(list);
     }
 }

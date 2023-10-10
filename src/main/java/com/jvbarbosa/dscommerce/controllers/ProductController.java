@@ -3,6 +3,7 @@ package com.jvbarbosa.dscommerce.controllers;
 import com.jvbarbosa.dscommerce.dto.ProductDTO;
 import com.jvbarbosa.dscommerce.dto.ProductMinDTO;
 import com.jvbarbosa.dscommerce.services.ProductService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -11,7 +12,6 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import javax.validation.Valid;
 import java.net.URI;
 
 @RestController

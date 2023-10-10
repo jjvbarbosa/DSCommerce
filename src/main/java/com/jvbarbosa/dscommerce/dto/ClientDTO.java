@@ -4,24 +4,24 @@ import com.jvbarbosa.dscommerce.entities.User;
 
 public class ClientDTO {
 
-    private Long id;
-    private String name;
+	private Long id;
+	private String name;
+	
+	public ClientDTO(Long id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	
+	public ClientDTO(User entity) {
+		id = entity.getId();
+		name = entity.getName();
+	}
 
-    public ClientDTO(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public ClientDTO(User entity) {
-        id = entity.getId();
-        name = entity.getName();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 }
