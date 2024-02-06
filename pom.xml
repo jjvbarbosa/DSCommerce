@@ -62,9 +62,43 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.11</version>
+				<configuration>
+					<excludes>
+						<exclude>com/jvbarbosa/dscommerce/DscommerceApplication.class</exclude>
+						<exclude>com/jvbarbosa/dscommerce/config/**</exclude>
+						<exclude>com/jvbarbosa/dscommerce/entities/**</exclude>
+						<exclude>com/jvbarbosa/dscommerce/dto/**</exclude>
+						<exclude>com/jvbarbosa/dscommerce/controllers/**</exclude>
+						<exclude>com/jvbarbosa/dscommerce/controllers/handlers/**</exclude>
+						<exclude>com/jvbarbosa/dscommerce/services/exceptions/**</exclude>
+						<exclude>com/jvbarbosa/dscommerce/utils/**</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/jacoco-report</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.1.0</version> <!--$NO-MVN-MAN-VER$ -->
+				<version>3.3.1</version> <!--$NO-MVN-MAN-VER$ -->
 			</plugin>
 
 			<plugin>
